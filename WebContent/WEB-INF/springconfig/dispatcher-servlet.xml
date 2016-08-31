@@ -42,6 +42,7 @@ http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 		       <props>
 		         <prop key="hibernate.dialect">${hbm.dialect}</prop>
 		         <prop key="hibernate.show_sql">${hbm.showsql}</prop>
+		         <prop key="hibernate.format_sql">${hbm.formatsql}</prop>
 		       </props>
 		    </property>	
 		    
