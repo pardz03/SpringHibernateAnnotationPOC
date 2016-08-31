@@ -71,7 +71,6 @@ public class UserTest {
 		}
 	
 	}
-	
 	@Test
 	public void testFetchHQL(){
 		DataTransferObject dto = new DataTransferObject();
@@ -81,6 +80,34 @@ public class UserTest {
 		
 		DataTransferObject dtoresponse = userService.fetchViaHQL(dto);
 		
+		for(User u: dtoresponse.getListUser()){
+			System.out.println(u.getAddress()+u.getAge()+u.getName());
+		}
+	}
+	
+
+	public void testUpdateHQL(){
+		DataTransferObject dto = new DataTransferObject();
+		User user = new User();
+		user.setAge("25");
+		user.setName("JAYPOGE");
+		
+		user.setAddress("TAGUIG");
+		dto.setUser(user);
+		
+		userService.updateViaHQL(dto);
+
+	}
+	
+	
+
+	public void testFetchNative(){
+		DataTransferObject dto = new DataTransferObject();
+		User user = new User();
+		user.setAge("25");
+		dto.setUser(user);
+		
+		DataTransferObject dtoresponse = userService.fetchViaNative(dto);
 		for(User u: dtoresponse.getListUser()){
 			System.out.println(u.getAddress()+u.getAge()+u.getName());
 		}

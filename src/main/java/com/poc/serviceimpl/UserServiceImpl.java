@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.poc.dao.UserDao;
 import com.poc.dao.UserDaoHQL;
+import com.poc.dao.UserDaoNativeQL;
 import com.poc.dto.DataTransferObject;
 import com.poc.service.UserService;
 
@@ -16,6 +17,9 @@ public class UserServiceImpl implements UserService{
 	
 	@Autowired
 	private UserDaoHQL userDaoHQL;
+	
+	@Autowired
+	private UserDaoNativeQL userDaoNative;
 	
 	@Override
 	public boolean save(DataTransferObject dto) {
@@ -43,7 +47,6 @@ public class UserServiceImpl implements UserService{
 
 	
 	
-	
 	@Override
 	public boolean saveViaHQL(DataTransferObject dto) {
 		// TODO Auto-generated method stub
@@ -66,6 +69,14 @@ public class UserServiceImpl implements UserService{
 	public DataTransferObject fetchViaHQL(DataTransferObject dto) {
 		// TODO Auto-generated method stub
 		return userDaoHQL.fetch(dto);
+	}
+
+	
+	
+	@Override
+	public DataTransferObject fetchViaNative(DataTransferObject dto) {
+		// TODO Auto-generated method stub
+		return userDaoNative.fetch(dto);
 	}
 
 }
