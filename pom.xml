@@ -32,6 +32,13 @@
 	      <scope>test</scope>
 	    </dependency>
 	    
+	   <!-- Dao Support -->
+	    <dependency>
+	        <groupId>org.springframework</groupId>
+	        <artifactId>spring-jdbc</artifactId>
+	    </dependency>
+        <!-- Spring -->
+	    
         <!-- Spring -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -64,23 +71,25 @@
 		</dependency>  
 			
 		<!--hibernate dependency -->
+		 <dependency>
+		   <groupId>org.springframework</groupId>
+		   <artifactId>spring-orm</artifactId>
+		</dependency>
 		<dependency>
 	      <groupId>org.hibernate</groupId>
 	      <artifactId>hibernate-core</artifactId>
 	      <scope>compile</scope>
-	    </dependency>
-	    
+	    </dependency>	    
     	<dependency>
 	      <groupId>org.hibernate</groupId>
 	      <artifactId>hibernate-entitymanager</artifactId>
 	      <scope>compile</scope>
-	    </dependency>
-	    
+	    </dependency>	    
 	    <dependency>
 			<groupId>commons-collections</groupId>
 			<artifactId>commons-collections</artifactId>
 		</dependency>	
-    	  
+			  
        </dependencies> 
         
   <build>
