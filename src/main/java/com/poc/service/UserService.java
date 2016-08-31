@@ -7,4 +7,9 @@ public interface UserService {
 	boolean update(DataTransferObject dto);
 	boolean delete(DataTransferObject dto);
 	DataTransferObject fetch(DataTransferObject dto);
+	
+	boolean saveViaHQL(DataTransferObject dto);
+	boolean updateViaHQL(DataTransferObject dto);
+	boolean deleteViaHQL(DataTransferObject dto);
+	DataTransferObject fetchViaHQL(DataTransferObject dto);
 }

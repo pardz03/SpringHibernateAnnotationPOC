@@ -57,7 +57,7 @@ public class UserTest {
 		userService.delete(dto);
 	}
 	
-	@Test
+
 	public void testFetch(){
 		DataTransferObject dto = new DataTransferObject();
 		User user = new User();
@@ -70,5 +70,19 @@ public class UserTest {
 			System.out.println(u.getAddress()+u.getAge()+u.getName());
 		}
 	
+	}
+	
+	@Test
+	public void testFetchHQL(){
+		DataTransferObject dto = new DataTransferObject();
+		User user = new User();
+		user.setAge("25");
+		dto.setUser(user);
+		
+		DataTransferObject dtoresponse = userService.fetchViaHQL(dto);
+		
+		for(User u: dtoresponse.getListUser()){
+			System.out.println(u.getAddress()+u.getAge()+u.getName());
+		}
 	}
 }
