@@ -19,14 +19,14 @@ public class UserTest {
 	public void destroy() {
 		userService = null;
 	}
-	
+	@Test
 	public void testSave(){
 		DataTransferObject dto = new DataTransferObject();
 		User user = new User();
 		
 		user.setAge("25");
 		user.setName("JOHN REY");
-		user.setAddress("ALABAMAhibernate");
+		user.setAddress("ALABAMAhibernate2");
 		dto.setUser(user);
 		
 		userService.save(dto);
@@ -48,7 +48,7 @@ public class UserTest {
 	public void testDelete(){
 		DataTransferObject dto = new DataTransferObject();
 		User user = new User();
-		user.setId(38);
+		user.setId(44);
 		user.setAge("46");
 		user.setName("JOHN REY");
 		user.setAddress("ALABAMAhibernate");
@@ -71,7 +71,7 @@ public class UserTest {
 		}
 	
 	}
-	@Test
+
 	public void testFetchHQL(){
 		DataTransferObject dto = new DataTransferObject();
 		User user = new User();
