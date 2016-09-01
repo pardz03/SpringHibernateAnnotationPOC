@@ -30,14 +30,14 @@ CREATE TABLE tbl_image
 (
   name character varying,
   path character varying,
-  id_image integer NOT NULL,
+  id_image serial NOT NULL,
   CONSTRAINT tbl_image_pkey PRIMARY KEY (id_image)
 )
 WITH (
   OIDS=FALSE
 );
 ALTER TABLE tbl_image
-  OWNER TO postgres;  
+  OWNER TO postgres;
   
   
   
@@ -50,7 +50,7 @@ ALTER TABLE tbl_image
 CREATE TABLE tbl_imagedetails
 (
   comment character varying,
-  id_details integer NOT NULL,
+  id_details serial NOT NULL,
   CONSTRAINT tbl_imagedetails_pkey PRIMARY KEY (id_details)
 )
 WITH (
@@ -58,7 +58,7 @@ WITH (
 );
 ALTER TABLE tbl_imagedetails
   OWNER TO postgres;
-  
+
   
   
   
@@ -79,6 +79,7 @@ WITH (
 );
 ALTER TABLE tbl_imageinfo
   OWNER TO postgres;
+
   
   
     -- joining tables the correct way
