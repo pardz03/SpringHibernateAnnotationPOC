@@ -45,7 +45,7 @@ public class ImageTest {
 		}
 	}
 	
-	@Test
+
 	public void testFetchNative(){
 		DataTransferObject dto = new DataTransferObject();
 		Image im = new Image();
@@ -74,26 +74,43 @@ public class ImageTest {
 			System.out.println(i.getComment());
 		}
 	}
-	
 
+	@Test
 	public void save(){
 		DataTransferObject dto = new DataTransferObject();
 		
 		Image image = new Image();
-		image.setName("jaypogi image 2");
-		image.setPath("D drive daw");
+		image.setName("JOHN REY");
+		image.setPath("C DRIVE");
 		
 		ImageDetails imd = new ImageDetails();
-		imd.setComment("nhihihihi");
+		imd.setComment("new comment");
+		ImageDetails imd2 = new ImageDetails();
+		imd2.setComment("comment 2");
 
+		
 		Set<ImageDetails> setImageDetails = new HashSet<ImageDetails>();
 		setImageDetails.add(imd);
+		setImageDetails.add(imd2);
 
 		
 		image.setImageDetail(setImageDetails);
 		
 		dto.setImage(image);
 		imageService.save(dto);
+	}
+	
+
+	public void saveDetails(){
+		DataTransferObject dto = new DataTransferObject();
+		
+		
+		ImageDetails imd = new ImageDetails();
+		imd.setComment("new Comment");
+
+		
+		dto.setImageDetails(imd);
+		imageService.saveDetails(dto);
 	}
 	
 }

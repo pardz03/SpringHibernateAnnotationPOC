@@ -16,6 +16,8 @@ public class DataTransferObject {
 	private List<ImageDetails> listImageDetails;
 	
 	private Image image;
+	
+	private ImageDetails imageDetails;
 
 	public User getUser() {
 		return user;
@@ -55,5 +57,13 @@ public class DataTransferObject {
 
 	public void setImage(Image image) {
 		this.image = image;
+	}
+
+	public ImageDetails getImageDetails() {
+		return imageDetails;
+	}
+
+	public void setImageDetails(ImageDetails imageDetails) {
+		this.imageDetails = imageDetails;
 	}
 }

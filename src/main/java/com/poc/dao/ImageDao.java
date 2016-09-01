@@ -67,4 +67,8 @@ public class ImageDao extends CustomHibernateDaoSupport{
 		getSessionFactory().save(dto.getImage());
 	}
 	
+	public void saveDetails(DataTransferObject dto){
+		getSessionFactory().save(dto.getImageDetails());
+	}
+	
 }
