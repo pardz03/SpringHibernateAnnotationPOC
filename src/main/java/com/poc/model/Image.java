@@ -35,6 +35,10 @@ public class Image {
 	private String path;
 	
 	/**
+	 * 
+	 * fetch type eager is use to automatically fills up the joined table when selecting main table
+	 * cascadetype all is used when automatically saves,insert,delete up main and connected table
+	 * 
 	 * reference column name is where the name of the column of tbl_image
 	 * name is where the joined table is joinedcolumn
 	 */

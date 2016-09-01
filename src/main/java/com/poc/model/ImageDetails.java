@@ -30,7 +30,10 @@ public class ImageDetails {
 	private String comment;
 	
 	/**
-	 * fetch type EAGER automatically query joined tables
+	 * joined column must be inverse in other joined table
+	 * 
+	 * fetch type eager is use to automatically fills up the joined table when selecting main table
+	 * cascadetype all is used when automatically saves,insert,delete up main and connected table
 	 */
     @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     @JoinTable(name="tbl_imageinfo",  
