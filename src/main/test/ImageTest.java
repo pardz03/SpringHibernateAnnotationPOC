@@ -99,7 +99,7 @@ public class ImageTest {
 	}
 	
 
-	@Test
+
 	public void saveDetails(){
 		DataTransferObject dto = new DataTransferObject();
 
@@ -111,6 +111,26 @@ public class ImageTest {
 		
 		dto.setImageDetails(imd);
 		imageService.saveDetails(dto);
+	}
+	
+
+	public void delete(){
+		DataTransferObject dto = new DataTransferObject();
+		
+		Image image = new Image();
+		image.setId(15);	
+		dto.setImage(image);
+		imageService.delete(dto);
+	}
+	
+	@Test
+	public void deleteDetails(){
+		DataTransferObject dto = new DataTransferObject();
+
+		ImageDetails imd = new ImageDetails();
+		imd.setId(32);
+		dto.setImageDetails(imd);
+		imageService.deleteDetails(dto);
 	}
 	
 }

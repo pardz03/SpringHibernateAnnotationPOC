@@ -8,4 +8,6 @@ public interface ImageService {
 	public DataTransferObject fetchImageNative(DataTransferObject dto);
 	public void save(DataTransferObject dto);
 	public void saveDetails(DataTransferObject dto);
+	public void delete(DataTransferObject dto);
+	public void deleteDetails(DataTransferObject dto);
 }

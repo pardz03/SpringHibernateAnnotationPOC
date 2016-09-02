@@ -43,4 +43,16 @@ public class ImageServiceImpl implements ImageService{
 		imageDao.saveDetails(dto);
 	}
 
+	@Override
+	public void delete(DataTransferObject dto) {
+		// TODO Auto-generated method stub
+		imageDao.delete(dto);
+	}
+
+	@Override
+	public void deleteDetails(DataTransferObject dto) {
+		// TODO Auto-generated method stub
+		imageDao.deleteDetails(dto);
+	}
+
 }

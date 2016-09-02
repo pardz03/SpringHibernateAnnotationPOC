@@ -71,4 +71,12 @@ public class ImageDao extends CustomHibernateDaoSupport{
 		getSessionFactory().save(dto.getImageDetails());
 	}
 	
+	public void delete(DataTransferObject dto){
+		getSessionFactory().delete(dto.getImage());
+	}
+	
+	public void deleteDetails(DataTransferObject dto){
+		getSessionFactory().delete(dto.getImageDetails());
+	}
+	
 }
