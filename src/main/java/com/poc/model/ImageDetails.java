@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 /**
  * 
@@ -33,9 +33,9 @@ public class ImageDetails {
 	 * joined column must be inverse in other joined table
 	 * 
 	 * fetch type eager is use to automatically fills up the joined table when selecting main table
-	 * cascadetype all is used when automatically saves,insert,delete up main and connected table
+	 * cascadetype merge is used when inserting a one to one with connecting table
 	 */
-    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.MERGE)
     @JoinTable(name="tbl_imageinfo",  
     joinColumns={@JoinColumn(name="id_details", referencedColumnName="id_details")},  
     inverseJoinColumns={@JoinColumn(name="id_image", referencedColumnName="id_image")})  

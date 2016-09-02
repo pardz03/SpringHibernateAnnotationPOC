@@ -75,7 +75,7 @@ public class ImageTest {
 		}
 	}
 
-	@Test
+
 	public void save(){
 		DataTransferObject dto = new DataTransferObject();
 		
@@ -84,14 +84,12 @@ public class ImageTest {
 		image.setPath("C DRIVE");
 		
 		ImageDetails imd = new ImageDetails();
-		imd.setComment("new comment");
-		ImageDetails imd2 = new ImageDetails();
-		imd2.setComment("comment 2");
+		imd.setComment("comm");
 
 		
 		Set<ImageDetails> setImageDetails = new HashSet<ImageDetails>();
 		setImageDetails.add(imd);
-		setImageDetails.add(imd2);
+
 
 		
 		image.setImageDetail(setImageDetails);
@@ -101,13 +99,15 @@ public class ImageTest {
 	}
 	
 
+	@Test
 	public void saveDetails(){
 		DataTransferObject dto = new DataTransferObject();
-		
-		
-		ImageDetails imd = new ImageDetails();
-		imd.setComment("new Comment");
 
+		ImageDetails imd = new ImageDetails();
+		imd.setComment("new Comment2");
+		Image image = new Image();
+		image.setId(15);
+		imd.setImage(image);
 		
 		dto.setImageDetails(imd);
 		imageService.saveDetails(dto);
