@@ -85,11 +85,13 @@ public class ImageTest {
 		
 		ImageDetails imd = new ImageDetails();
 		imd.setComment("comm");
+		ImageDetails imd2 = new ImageDetails();
+		imd2.setComment("comm2");
 
 		
 		Set<ImageDetails> setImageDetails = new HashSet<ImageDetails>();
 		setImageDetails.add(imd);
-
+		setImageDetails.add(imd2);
 
 		
 		image.setImageDetail(setImageDetails);
@@ -106,7 +108,7 @@ public class ImageTest {
 		ImageDetails imd = new ImageDetails();
 		imd.setComment("new Comment2");
 		Image image = new Image();
-		image.setId(15);
+		image.setId(22);
 		imd.setImage(image);
 		
 		dto.setImageDetails(imd);
@@ -123,14 +125,36 @@ public class ImageTest {
 		imageService.delete(dto);
 	}
 	
-	@Test
+
 	public void deleteDetails(){
 		DataTransferObject dto = new DataTransferObject();
 
 		ImageDetails imd = new ImageDetails();
-		imd.setId(32);
+		imd.setId(44);
 		dto.setImageDetails(imd);
 		imageService.deleteDetails(dto);
+	}
+	
+
+	public void update(){
+		DataTransferObject dto = new DataTransferObject();
+		
+		Image image = new Image();
+		image.setId(22);	
+		image.setPath("TAE PATH233");
+		dto.setImage(image);
+		imageService.update(dto);
+	}
+	
+	@Test
+	public void updateDetails(){
+		DataTransferObject dto = new DataTransferObject();
+
+		ImageDetails imd = new ImageDetails();
+		imd.setId(45);
+		imd.setComment("PARDZ");
+		dto.setImageDetails(imd);
+		imageService.updateDetails(dto);
 	}
 	
 }

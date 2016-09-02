@@ -35,6 +35,9 @@ public class ImageDao extends CustomHibernateDaoSupport{
 	
 	private static final String FETCH_IMAGENATIVE = "select * from tbl_image i";
 	
+	private static final String UPDATE_IMAGE = "update Image set path=:pathname where id=:imageid";
+	private static final String UPDATE_IMAGEDETAILS = "update ImageDetails set comment=:imagecomment where id=:id";
+	
 	@SuppressWarnings("unchecked")
 	public DataTransferObject fetch(DataTransferObject dto){
 		Query query = getSessionFactory().createQuery(FETCH_IMAGEJOIN);
@@ -79,4 +82,17 @@ public class ImageDao extends CustomHibernateDaoSupport{
 		getSessionFactory().delete(dto.getImageDetails());
 	}
 	
+	public void update(DataTransferObject dto){
+		Query q= getSessionFactory().createQuery(UPDATE_IMAGE);
+		q.setParameter("pathname", dto.getImage().getPath());
+		q.setParameter("imageid", dto.getImage().getId());
+		q.executeUpdate();
+	}
+	
+	public void updateDetails(DataTransferObject dto){
+		Query q= getSessionFactory().createQuery(UPDATE_IMAGEDETAILS);
+		q.setParameter("imagecomment", dto.getImageDetails().getComment());
+		q.setParameter("id", dto.getImageDetails().getId());
+		q.executeUpdate();
+	}
 }

@@ -10,4 +10,6 @@ public interface ImageService {
 	public void saveDetails(DataTransferObject dto);
 	public void delete(DataTransferObject dto);
 	public void deleteDetails(DataTransferObject dto);
+	public void update(DataTransferObject dto);
+	public void updateDetails(DataTransferObject dto);
 }
